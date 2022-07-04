@@ -47,6 +47,14 @@
     margin: 2px;    
 }
 
+.wrapper{
+    display: flex;
+    width: 100%;
+}
+
+.username{ 
+    font-size: 12px;
+}
 .output{
     overflow: auto;
 
