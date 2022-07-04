@@ -5,7 +5,7 @@ const room_id = process.env.REACT_APP_SD_ROOM_ID;
 export default function Output({ drone, username }) {
   const [messages, setMessages] = useState([]);
 
-  const room = drone.subscribe("secret-room");
+  const room = drone.subscribe(room_id);
   room.on("open", (error) => {
     if (error) {
       console.error(error);

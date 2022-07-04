@@ -9,7 +9,7 @@ export default function Input({drone, color, username}) {
 
         e.preventDefault(e)
         drone.publish({
-          room: "secret-room",
+          room: room_id,
           message: {
             msg: e.target[0].value,
             color: `#${color}`,

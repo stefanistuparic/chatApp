@@ -7,7 +7,7 @@ import { generateUsername } from 'friendly-username-generator';
 const channel_id = process.env.REACT_APP_SD_CHANNEL_ID;
 
 export default function Room() {
-  const drone = new window.Scaledrone("kiKME095hd1S1kPA");
+  const drone = new window.Scaledrone(channel_id);
   const randomCol = Math.floor(Math.random() * 16777215).toString(16);
   const randomUser = generateUsername();
 
