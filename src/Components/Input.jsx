@@ -1,11 +1,26 @@
 import React from "react";
+import { generateUsername } from 'friendly-username-generator';
 
-export default function Input({setText}) {
+const room_id = process.env.REACT_APP_SD_ROOM_ID
+
+export default function Input({drone}) {
+
+  const randomCol = Math.floor(Math.random()*16777215).toString(16);
+  const randomUser = generateUsername();
+
 
     
-function handleSubmit(e){
+  function handleSubmit(e){
+
         e.preventDefault(e)
-        setText( (prevState) => ([...prevState, e.target[0].value]));
+        drone.publish({
+          room: "secret-room",
+          message: {
+            msg: e.target[0].value,
+            color: `#${randomCol}`,
+            username: randomUser
+            }
+        });
         e.target[0].value = '';
        }
 
